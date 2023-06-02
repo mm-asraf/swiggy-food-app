@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import MainUI from './UI/MainUI';
 import { API_URL, CLOUDINARY_URL } from '../Utils/api';
 import Card from './UI/Card';
+import Star from './UI/Star';
 import './Main.css';
+import styles from './UI/Star.module.css';
 
 const Main = () => {
   const [restaurantData, setRestaurantData] = useState([]);
-
+  const [fourStar, setFourStar] = useState(false);
   //making api calls
   const getRestaurantData = async () => {
     const res = await fetch(API_URL);
@@ -20,7 +22,18 @@ const Main = () => {
   }, []);
 
   console.log('--------------------------------');
-  console.log(restaurantData);
+
+  useEffect(() => {
+    restaurantData.map((d) => {
+      const { avgRating } = d?.data;
+      if (avgRating >= 4) {
+        setFourStar(true);
+      } else {
+        setFourStar(false);
+      }
+    });
+  }, [restaurantData]);
+  // console.log(restaurantData);
 
   return (
     <MainUI>
@@ -44,10 +57,18 @@ const Main = () => {
               <p className="card_name">{name}</p>
               <p className="p card_cuisines">{cuisines.join(',')}</p>
               <div className="set_in_one_line">
+                <Star
+                  className={`${styles['star-control']} ${
+                    !fourStar && styles.fourstar
+                  }`}
+                >
+                  <span className="p card_Rating">{avgRating}</span>
+                </Star>
+
                 <span className="p card_costForTwoString">
                   {costForTwoString}
                 </span>
-                <span className="p card_Rating">{avgRating}</span>
+
                 <span className="p card_deliveryTime">{deliveryTime}</span>
               </div>
             </Card>

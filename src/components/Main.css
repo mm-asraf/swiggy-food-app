@@ -5,26 +5,30 @@
 
 .card_image {
   width: 200px;
-  margin: 8px;
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-right: 8px;
 }
 
 .card_name {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 17px;
+  padding-left: 8px;
   font-weight: 500;
-}
-
-.p {
 }
 
 .card_cuisines {
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: #686b78;
   font-size: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-weight: 200;
 }
-.set_in_one_line > span {
-  font-size: 12px;
-  font-weight: 200;
-  margin: 4px;
+
+.set_in_one_line {
+  display: flex;
+  justify-content: space-around;
+  color: #686b78;
+  font-size: 13px;
 }

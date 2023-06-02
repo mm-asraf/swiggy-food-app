@@ -1,0 +1,10 @@
+.star {
+  width: 30px;
+  height: 20px;
+  /* background-color: #48c479; */
+}
+
+/*  #db7c38 */
+.star-control.fourstar {
+  color: red;
+}
