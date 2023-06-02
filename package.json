@@ -1,0 +1,39 @@
+{
+  "name": "foodapp",
+  "version": "1.0.0",
+  "description": "this is an food ordering application like swiggy,zomata.",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mm-asraf/swiggy-food-app.git"
+  },
+  "keywords": [
+    "foodApp",
+    "Swiggy-Clone",
+    "Mahboob",
+    "Asraf"
+  ],
+  "author": "Mahboob Asraf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mm-asraf/swiggy-food-app/issues"
+  },
+  "homepage": "https://github.com/mm-asraf/swiggy-food-app#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "parcel": "^2.9.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}

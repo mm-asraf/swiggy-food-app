@@ -1,0 +1,38 @@
+.header_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo > img {
+  width: 80px;
+  cursor: pointer;
+}
+
+.first_half {
+  display: flex;
+  /* background-color: gray; */
+  margin-right: 42rem;
+}
+.side_collapse {
+  margin: 37px;
+}
+
+.icon_shape {
+  margin-left: 8px;
+  margin-top: 1px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.second_half {
+  display: flex;
+  justify-content: center;
+  /* background-color: green; */
+}
+
+.second_half > div {
+  margin: 20px;
+  padding: 15px;
+}

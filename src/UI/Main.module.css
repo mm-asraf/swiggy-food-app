@@ -1,0 +1,8 @@
+.main {
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  background-color: #fefefe;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+  border-left: none;
+}
