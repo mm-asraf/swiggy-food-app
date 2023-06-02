@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card_image {
+  width: 200px;
+  margin: 8px;
+}
+
+.card_name {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.p {
+}
+
+.card_cuisines {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #686b78;
+  font-size: 13px;
+  font-weight: 200;
+}
+.set_in_one_line > span {
+  font-size: 12px;
+  font-weight: 200;
+  margin: 4px;
+}
