@@ -1,11 +1,11 @@
 import React from 'react';
 import './Navigation.css';
 
-const Navigation = () => {
+const Navigation = ({ restaurData }) => {
   return (
     <nav className="navigation">
       <div className="first_nav">
-        <h4>Total Restaurants</h4>
+        <h4>Total Restaurants:{restaurData.totalRestaurants}</h4>
       </div>
 
       <div className="second_nav">

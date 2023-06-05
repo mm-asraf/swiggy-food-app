@@ -1,41 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import MainUI from './UI/MainUI';
-import { API_URL, CLOUDINARY_URL } from '../Utils/api';
+import { CLOUDINARY_URL } from '../Utils/api';
 import Card from './UI/Card';
 import Star from './UI/Star';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './Main.css';
 import styles from './UI/Star.module.css';
 import ShimmerUI from './UI/ShimmerUI';
 
-const Main = () => {
-  const [restaurantData, setRestaurantData] = useState([]);
-  const [fourStar, setFourStar] = useState(false);
-  const [isLoading, setIsloading] = useState(false);
-  //making api calls
-  const getRestaurantData = async () => {
-    const res = await fetch(API_URL);
-    const resData = await res.json();
-
-    setRestaurantData(resData.data.cards[0].data.data.cards);
-  };
-
-  useEffect(() => {
-    getRestaurantData();
-  }, []);
-
-  useEffect(() => {
-    restaurantData.map((d) => {
-      const { avgRating } = d?.data;
-      if (avgRating >= 4) {
-        setFourStar(true);
-      } else {
-        setFourStar(false);
-      }
-    });
-  }, [restaurantData]);
-  // console.log(restaurantData);
-
-  // const shimmer = <ShimmerUI />;
+const Main = ({ restaurantData }) => {
+  console.log(restaurantData);
 
   return restaurantData.length === 0 ? (
     <ShimmerUI />
@@ -61,12 +36,23 @@ const Main = () => {
               <p className="card_name">{name}</p>
               <p className="p card_cuisines">{cuisines.join(',')}</p>
               <div className="set_in_one_line">
-                <Star
-                  className={`${styles['star-control']} ${
-                    !fourStar && styles.fourstar
-                  }`}
-                >
-                  <span className="p card_Rating">{avgRating}</span>
+                <Star>
+                  <div
+                    className="st"
+                    style={{
+                      backgroundColor:
+                        avgRating == '--'
+                          ? '#535665'
+                          : avgRating >= 4
+                          ? '#48c479'
+                          : '#db7c38',
+                    }}
+                  >
+                    <span className="p card_Rating">
+                      <FontAwesomeIcon className="icon_star" icon={faStar} />
+                      {avgRating}
+                    </span>
+                  </div>
                 </Star>
 
                 <span className="p card_costForTwoString">

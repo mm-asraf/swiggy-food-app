@@ -3,3 +3,6 @@ export const API_URL =
 
 export const CLOUDINARY_URL =
   'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/';
+
+export const IMG_URL =
+  'https://i.pinimg.com/736x/b3/8a/a1/b38aa1b21050b0e769a97eb751d12829.jpg';

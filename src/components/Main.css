@@ -32,3 +32,14 @@
   color: #686b78;
   font-size: 13px;
 }
+
+.st {
+  width: 30px;
+  padding: 5px;
+  color: #fff;
+}
+
+.icon_star {
+  font-size: 10px;
+  padding-right: 1px;
+}

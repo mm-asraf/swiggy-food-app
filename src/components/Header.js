@@ -7,9 +7,8 @@ import {
   faUser,
   faCartShopping,
 } from '@fortawesome/free-solid-svg-icons';
-const Header = () => {
-  const IMG_URL =
-    'https://i.pinimg.com/736x/b3/8a/a1/b38aa1b21050b0e769a97eb751d12829.jpg';
+import { IMG_URL } from '../Utils/api';
+const Header = ({ restaurData }) => {
   return (
     <header className="header_container">
       <div className="first_half">

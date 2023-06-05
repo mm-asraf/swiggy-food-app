@@ -10,7 +10,10 @@ const ShimmerUI = () => {
       <div className={classes.container}>
         {num.map((e) => {
           return (
-            <Card className={`${classes.shimmerBG} ${classes.media} `}></Card>
+            <Card
+              key={Math.random * 100 * toString}
+              className={`${classes.shimmerBG} ${classes.media} `}
+            ></Card>
           );
         })}
       </div>
