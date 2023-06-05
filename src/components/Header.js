@@ -1,11 +1,14 @@
 import React from 'react';
 import './Header.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon, faHouse } from '@fortawesome/react-fontawesome';
 import {
   faChevronDown,
   faMagnifyingGlass,
   faUser,
   faCartShopping,
+  faHouse,
+  faHeart,
 } from '@fortawesome/free-solid-svg-icons';
 import { IMG_URL } from '../Utils/api';
 const Header = ({ restaurData }) => {
@@ -24,16 +27,22 @@ const Header = ({ restaurData }) => {
       </div>
 
       <div className="second_half">
-        <div>
-          <FontAwesomeIcon className="icon_shape" icon={faMagnifyingGlass} />
-        </div>
+        <FontAwesomeIcon className="icon_shape" icon={faMagnifyingGlass} />
+        <Link to="/" className="link_tag">
+          <FontAwesomeIcon className="icon_shape" icon={faHouse} />
+        </Link>
 
-        <div>
+        <Link to="/signin" className="link_tag">
           <FontAwesomeIcon className="icon_shape" icon={faUser} />
-        </div>
-        <div>
+        </Link>
+
+        <Link to="/wishlist" className="link_tag">
+          <FontAwesomeIcon className="icon_shape" icon={faHeart} />
+        </Link>
+
+        <Link to="/cart" className="link_tag">
           <FontAwesomeIcon className="icon_shape" icon={faCartShopping} />
-        </div>
+        </Link>
       </div>
     </header>
   );
