@@ -20,8 +20,9 @@ const AppLayout = () => {
     const res = await fetch(API_URL);
     const resData = await res.json();
 
-    setRestaurantData(resData.data.cards[0].data.data.cards);
-    setRestaurData(resData.data.cards[0].data.data);
+    console.log(resData);
+    setRestaurantData(resData?.data?.cards[0]?.data?.data?.cards);
+    setRestaurData(resData?.data?.cards[0]?.data?.data);
   };
 
   console.log(restaurData.totalRestaurants);

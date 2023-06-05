@@ -9,6 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { IMG_URL } from '../Utils/api';
 const Header = ({ restaurData }) => {
+  console.log(restaurData);
   return (
     <header className="header_container">
       <div className="first_half">
