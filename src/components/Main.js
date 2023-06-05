@@ -5,10 +5,12 @@ import Card from './UI/Card';
 import Star from './UI/Star';
 import './Main.css';
 import styles from './UI/Star.module.css';
+import ShimmerUI from './UI/ShimmerUI';
 
 const Main = () => {
   const [restaurantData, setRestaurantData] = useState([]);
   const [fourStar, setFourStar] = useState(false);
+  const [isLoading, setIsloading] = useState(false);
   //making api calls
   const getRestaurantData = async () => {
     const res = await fetch(API_URL);
@@ -20,8 +22,6 @@ const Main = () => {
   useEffect(() => {
     getRestaurantData();
   }, []);
-
-  console.log('--------------------------------');
 
   useEffect(() => {
     restaurantData.map((d) => {
@@ -35,7 +35,11 @@ const Main = () => {
   }, [restaurantData]);
   // console.log(restaurantData);
 
-  return (
+  // const shimmer = <ShimmerUI />;
+
+  return restaurantData.length === 0 ? (
+    <ShimmerUI />
+  ) : (
     <MainUI>
       <div className="container">
         {restaurantData.map((res) => {
