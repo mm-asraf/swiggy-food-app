@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import './App.css';
+
 import Header from './src/components/Header';
 import SignIn from './src/components/SignIn';
 import Error from './src/components/UI/Error';
 import Body from './src/components/Body';
 import Cart from './src/components/UI/Cart';
 import WishList from './src/components/WishList';
+import RestaurnatMenu from './src/components/RestaurantMenu';
 
 const AppLayout = () => {
   return (
@@ -38,6 +40,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+      },
+      {
+        path: '/restaurant/:restId',
+        element: <RestaurnatMenu />,
       },
     ],
     errorElement: <Error />,

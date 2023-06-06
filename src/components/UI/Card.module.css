@@ -11,3 +11,12 @@
 .card:hover {
   transform: scale(1.1);
 }
+
+.cont {
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
+  color: #686b78;
+}
