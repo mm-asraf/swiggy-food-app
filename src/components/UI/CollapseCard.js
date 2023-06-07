@@ -19,7 +19,7 @@ const text = `
   Known for its loyalty and faithfulness,
   it can be found as a welcome guest in many households across the world.
 `;
-const CollapseCard = () => {
+const CollapseCard = ({ resInfo }) => {
   const [expandIconPosition, setExpandIconPosition] = useState('start');
   const onPositionChange = (newExpandIconPosition) => {
     setExpandIconPosition(newExpandIconPosition);
@@ -35,6 +35,9 @@ const CollapseCard = () => {
       }}
     />
   );
+
+  console.log(resInfo + '-------------');
+
   return (
     <>
       <Collapse
@@ -44,9 +47,7 @@ const CollapseCard = () => {
         className="panel"
       >
         <Panel header="This is panel header 1" key="1" extra={genExtra()}>
-          <RectangleCard>
-            <div>{text}</div>
-          </RectangleCard>
+          <RectangleCard></RectangleCard>;
         </Panel>
         <Panel header="This is panel header 2" key="2" extra={genExtra()}>
           <div>{text}</div>

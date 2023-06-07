@@ -2,3 +2,8 @@
   width: 60%;
   margin: 0 auto;
 }
+.panel_space {
+  width: 60% !important;
+  margin-left: 280px !important;
+  margin-bottom: 5px;
+}

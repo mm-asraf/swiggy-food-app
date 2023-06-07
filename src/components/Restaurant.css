@@ -1,0 +1,14 @@
+.card_setOne {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.second_side {
+  margin-top: 51px;
+  padding: 5px;
+}
