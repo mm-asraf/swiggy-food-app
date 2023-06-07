@@ -46,10 +46,13 @@ const RestaurnatMenu = () => {
     resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
 
   const menu = resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
-  console.log(menu);
-  // console.log(itemCards);
-  // console.log(resInfo.cards[0].card.card.info);
 
+  console.log(menu);
+  console.log('---');
+  console.log(itemCards);
+  // console.log(resInfo.cards[0].card.card.info);
+  const { itemCards2 } =
+    resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
   console.log(title);
 
   const onChange = (key) => {
@@ -65,17 +68,6 @@ const RestaurnatMenu = () => {
   );
 
   console.log(resInfo);
-  // <h1>{name}</h1>
-  //     <p>
-  //       {cuisines.join(',')}- {costForTwoMessage}
-  //     </p>
-  //     <ul>
-  //       {itemCards.map((item) => (
-  //         <li>{item.card.info.name}</li>
-  //       ))}
-  //     </ul>
-
-  const men = [1, , 2, 3, 4, 5];
 
   return (
     <div>
@@ -104,7 +96,9 @@ const RestaurnatMenu = () => {
           <Space direction="vertical" className="panel_space" key={uuidv4()}>
             <Collapse collapsible="header" defaultActiveKey={['1']}>
               <Panel header={title} key="1">
-                <RectangleCard>api data feeded here</RectangleCard>
+                {itemCards.map((items) => {
+                  return <RectangleCard className="card_set"></RectangleCard>;
+                })}
               </Panel>
             </Collapse>
           </Space>
