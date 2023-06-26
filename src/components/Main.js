@@ -10,9 +10,18 @@ import './Main.css';
 import styles from './UI/Star.module.css';
 import ShimmerUI from './UI/ShimmerUI';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../Utils/useOnlineStatus';
 
 const Main = ({ restaurantData }) => {
   console.log(restaurantData);
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you are offline! please check your internet connectivity
+      </h1>
+    );
 
   return restaurantData.length === 0 ? (
     <ShimmerUI />

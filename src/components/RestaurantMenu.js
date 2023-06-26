@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { RESTAURANT_MENU_API } from '../Utils/api';
+import React from 'react';
+
 import ShimmerUI from './UI/ShimmerUI';
 import { useParams } from 'react-router-dom';
 import { SettingOutlined } from '@ant-design/icons';
@@ -9,25 +9,17 @@ import './UI/Panel.css';
 import RectangleCard from './UI/RectangleCard';
 import './Restaurant.css';
 import { v4 as uuidv4 } from 'uuid';
+import useRestaurnatMenu from '../Utils/useRestaurantMenu';
 const text = `
   A dog is a type of domesticated animal.
   Known for its loyalty and faithfulness,
   it can be found as a welcome guest in many households across the world.
 `;
 const RestaurnatMenu = () => {
-  const [resInfo, setResInfo] = useState([]);
-  const [expandIconPosition, setExpandIconPosition] = useState('start');
   const { restId } = useParams();
 
-  const getMenuInfo = async () => {
-    const data = await fetch(RESTAURANT_MENU_API + restId);
-    const json = await data.json();
-    setResInfo(json.data);
-  };
-
-  useEffect(() => {
-    getMenuInfo();
-  }, []);
+  //using custom hook
+  const resInfo = useRestaurnatMenu(restId);
 
   if (resInfo.length === 0) {
     return <ShimmerUI />;
@@ -49,7 +41,7 @@ const RestaurnatMenu = () => {
 
   console.log(menu);
   console.log('---');
-  console.log(itemCards);
+  // console.log('itemCards', itemCards);
   // console.log(resInfo.cards[0].card.card.info);
   const { itemCards2 } =
     resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
@@ -97,7 +89,11 @@ const RestaurnatMenu = () => {
             <Collapse collapsible="header" defaultActiveKey={['1']}>
               <Panel header={title} key="1">
                 {itemCards.map((items) => {
-                  return <RectangleCard className="card_set"></RectangleCard>;
+                  return (
+                    <RectangleCard className="card_set">
+                      {console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', items)}
+                    </RectangleCard>
+                  );
                 })}
               </Panel>
             </Collapse>
